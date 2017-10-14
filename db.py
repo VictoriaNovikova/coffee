@@ -5,7 +5,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 engine = create_engine('sqlite:///blog.sqlite')
-
 db_session = scoped_session(sessionmaker(bind=engine))
 
 
@@ -26,11 +25,6 @@ class User(Base):
     last_name = Column(String(50))
     email = Column(String(120), unique = True)
 
-    def __init__(self, first_name=None, last_name=None, email=None):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
-
     def __repr__(self):
         return '<User {} {}>'.format(self.first_name, self.last_name)
 
@@ -47,11 +41,6 @@ class Cafe(Base):
     # geo_location = Column() ??
 
 
-    def __init__(self, name=None, address=None, average_receipt=None):
-        self.name = name
-        self.address = address
-        self.average_receipt = average_receipt
-
     def __repr__(self):
         return 'Cafe {}'.format(self.name)
 
@@ -62,22 +51,17 @@ class Tag(Base):
     id = Column(Integer, primary_key=True)
     tag_name = Column(String(120))
 
-    def __init__(self, name=None):
-        self.name = name
 
     def __repr__(self):
         return "Tag {}".format(self.name)
 
 
-class Tags_for_cafe(Base):
+class TagsForCafe(Base):
     """Table for an associate of cafes and tags for it"""
 
     tag_id = Column(Integer, ForeignKey('tags.id'))
     cafe_id = Column(Integer, ForeignKey('coffee_shops.id'))
 
-    def __init__(self, tag_id=None, cafe_id=None):
-        self.tag_id = tag_id
-        self.cafe_id = cafe_id 
     
     def __repr__(self):
         return "{} is associated with {}".format(cafe_id, tag_id)

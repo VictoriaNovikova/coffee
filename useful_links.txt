@@ -1,0 +1,13 @@
+https://developers.google.com/maps/documentation/javascript/reference?hl=ru
+
+https://developers.google.com/maps/documentation/javascript/geolocation?hl=rus
+
+
+http://jinja.pocoo.org/docs/2.9/templates/
+
+http://jinja.pocoo.org/docs/2.9/api/#basics
+
+
+https://developers.google.com/maps/documentation/javascript/datalayer?hl=ru#load_geojson
+
+https://habrahabr.ru/post/324880/
