@@ -5,8 +5,8 @@ from flask_login import LoginManager, login_user, logout_user, login_required
 
 from jinja2 import Template
 import requests
-from social_flask.routes import social_auth
-from social_flask_sqlalchemy.models import init_social
+# from social_flask.routes import social_auth
+# from social_flask_sqlalchemy.models import init_social
 from db import User, db_session, Cafe
 import json
 from fullfill_db import get_nearest_cafe, get_cafe_json
