@@ -10,4 +10,11 @@ http://jinja.pocoo.org/docs/2.9/api/#basics
 
 https://developers.google.com/maps/documentation/javascript/datalayer?hl=ru#load_geojson
 
+
 https://habrahabr.ru/post/324880/
+
+http://python-social-auth.readthedocs.io/en/latest/configuration/flask.html
+
+
+
+get запрос к points с параметрами. В питоне их обрабатывать и возвращать geojson с метками.

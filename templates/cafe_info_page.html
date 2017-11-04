@@ -9,9 +9,10 @@
       {% include "navigation.html"%}      
     </div>
     <div class="page-header">
-      <h1>Карта кофеен</h1>
+      <h1>{{ cafe.name }}</h1>
     </div>
-    <div class="jumbotron" id="map"></div>
-    <div class="container-fluid" id="cafes"></div>    
+    <div class="container">
+      {{ cafe.address }} 
+    </div> 
   </body>
 </html>

@@ -1,32 +1,14 @@
 <div class="row">
-  <div class="col-lg-4">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="https://files.geometria.ru/pics/dynamic350/041/371/41371573.jpg" alt="Forma cafe">
-      <div class="card-body">
-        <h4 class="card-title">Forma cafe</h4>
-        <p class="card-text">Болотная набережная, 7 строение 3, Москва</p>
-        <a href="#" class="btn btn-primary">Узнать больше</a>
+  {% for cafe in cafes %}
+    <div class="col-lg-4">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" style="height: 15rem;" src="{% if cafe.image_url %}{{cafe.image_url}}{% else %}/static/img/flat-coffee-cup-icon.jpg{% endif %}" alt="Photo">
+        <div class="card-body">
+          <h4 class="card-title">{{cafe.name}}</h4>
+          <p class="card-text">{{cafe.address}}</p>
+          <a href="/cafes/{{cafe.id}}" class="btn btn-primary">Узнать больше</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="http://cs10937.userapi.com/u152858289/146366420/x_d4f99820.jpg" alt="Колония">
-      <div class="card-body">
-        <h4 class="card-title">Колония</h4>
-        <p class="card-text">Берсеневский переулок, 2с1, Москва</p>
-        <a href="#" class="btn btn-primary">Узнать больше</a>
-      </div>
-    </div>          
-  </div>
-  <div class="col-lg-4">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="https://img04.rl0.ru/afisha/c150x120/s4.afisha.net/MediaStorage/12/d6/bfad404c3a6c4d9a9d223c80d612.jpg" alt="Заря бар">
-      <div class="card-body">
-        <h4 class="card-title">Заря бар</h4>
-        <p class="card-text">Берсеневский переулок, 3/10с8, Москва</p>
-        <a href="#" class="btn btn-primary">Узнать больше</a>
-      </div>
-    </div>          
-  </div>
+  {% endfor %}
 </div>

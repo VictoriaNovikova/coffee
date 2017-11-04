@@ -2,3 +2,12 @@ flask
 sqlalchemy
 Jinja2
 requests
+Flask-SQLAlchemy
+http://github.com/pythonforfacebook/facebook-sdk/tarball/master
+python-twitter
+foursquare
+oauth2client google-api-python-client
+
+social-auth-app-flask
+social-auth-app-flask-sqlalchemy
+flask-login

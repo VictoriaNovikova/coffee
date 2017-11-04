@@ -10,16 +10,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Главная<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Главная</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/coffee/">Немного о кофе</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" method="POST" action="/login/">
-      <input class="form-control mr-sm-2" type="text" placeholder="Email" name="email">
-      <input class="form-control mr-sm-2" type="password" placeholder="Пароль" name="password">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Вход</button>
-    </form>
+    {% if user.first_name %}
+      <form class="form-inline my-2 my-lg-0" action="/logout">
+        <span class="navbar-text"> Привет, <b>{{user.first_name}}</b>!</span>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Выход</button>
+      </form>
+    {% else %}
+      <form class="form-inline my-2 my-lg-0" method="POST" action="/login">
+        <input class="form-control mr-sm-2" type="text" placeholder="Email" name="email">
+        <input class="form-control mr-sm-2" type="password" placeholder="Пароль" name="password">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Вход</button>
+      </form>
+    {% endif %}
   </div>
 </nav>

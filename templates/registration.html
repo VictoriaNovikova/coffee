@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "default_header.html"%}
+  </head>
+  <body>
+    <div class="masthead">
+      {% include "navigation.html"%}      
+    </div>
+    <div class="container">
+      <form id="registration_form" method="POST" action="/registrate">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control is-valid" name="email" aria-describedby="emailHelp" placeholder="example@server.com">
+          <small id="emailHelp" class="form-text text-muted">Ваш адрес электронной почты</small>
+          <div class="invalid-feedback">
+              Пожалуйста введите адрес электронной почты
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="password">Пароль</label>
+            <input type="password" class="form-control is-valid" name="password" placeholder="Ваш пароль для этого сайта" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите пароль
+            </div>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="confirm_password">Подтвердите пароль</label>
+            <input type="password" class="form-control is-valid" name="confirm_password" placeholder="Повторите пароль" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите пароль еще раз
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="first_name">Имя</label>
+            <input type="text" class="form-control is-valid" name="first_name" placeholder="Ваше имя" value="" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите Ваше имя
+            </div>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="last_name">Фамилия</label>
+            <input type="text" class="form-control is-valid" name="last_name" placeholder="Ваша фамилия" value="" required>
+            <div class="invalid-feedback">
+              Пожалуйста введите фамилию
+            </div>
+          </div>
+        </div>        
+        <div class="row">
+          <button type="submit" class="btn btn-primary">Регистрация</button>
+        </div>
+      </form>
+    </div>
+    <script>
+    (function() {
+      'use strict';
+
+      window.addEventListener('load', function() {
+        var form = document.getElementById('registration_form');
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      }, false);
+    })();
+    </script>
+  </body>
+</html>
+
