@@ -1,3 +1,5 @@
+# coding: utf8
+
 from flask import Flask, abort, request, render_template, session, redirect, g, url_for, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required
 
